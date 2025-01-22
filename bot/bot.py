@@ -4,11 +4,20 @@ from aiogram.enums import ParseMode
 from aiogram.types import BotCommand
 
 from bot.constants.env import BOT_TOKEN
-from bot.handlers import start_router, form_router, bad_router, admin_router
+from bot.handlers import (
+    start_router,
+    form_router,
+    bad_router,
+    admin_router,
+    broadcast_router,
+    cancel_router,
+)
 from bot.middlewares.user import UserMiddleware
 
 dp = Dispatcher()
-dp.include_routers(start_router, form_router, admin_router, bad_router)
+dp.include_routers(
+    cancel_router, start_router, form_router, admin_router, broadcast_router, bad_router
+)
 dp.message.outer_middleware(UserMiddleware())
 dp.callback_query.outer_middleware(UserMiddleware())
 

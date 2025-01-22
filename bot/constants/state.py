@@ -9,3 +9,10 @@ class FormGroup(StatesGroup):
     near_politic = State()
     lpr_join = State()
     other = State()
+
+
+class BroadcastForm(StatesGroup):
+    choice_type = State()
+    input_message = State()
+    input_stop = State()
+    confirm = State()

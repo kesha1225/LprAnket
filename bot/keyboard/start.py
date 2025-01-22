@@ -1,7 +1,7 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from bot.constants.admins import ADMINS
-from bot.constants.callback_data import SimpleCallbackData
+from bot.constants.callback_data import SimpleCallbackData, BroadcastCallbackData
 
 
 def get_start_keyboard(tg_id: int) -> InlineKeyboardMarkup:
@@ -20,6 +20,14 @@ def get_start_keyboard(tg_id: int) -> InlineKeyboardMarkup:
                 InlineKeyboardButton(
                     text="📤 Выгрузка результатов",
                     callback_data=SimpleCallbackData.excel_dump,
+                )
+            ]
+        )
+        keyboard.append(
+            [
+                InlineKeyboardButton(
+                    text="✉️ Сделать рассылку",
+                    callback_data=BroadcastCallbackData.start_broadcast,
                 )
             ]
         )

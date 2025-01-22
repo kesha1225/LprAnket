@@ -28,6 +28,18 @@ wheels = [
 ]
 
 [[package]]
+name = "aiogram-media-group"
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiogram" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/47/6e/f10d3e4980b5b81b963ed2cbcbf666b1c02bfa723cfb9a37f43c5f0ffbdd/aiogram-media-group-0.5.1.tar.gz", hash = "sha256:a5ab6c1dea4a0729c25fdb90b2310537d71d8d3554765d302b37156edaa51d33", size = 5533 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/da/22/5124e475fac271b5437e634ea967130e4ac98c18c9a0f00a6b7ca9ebcbf3/aiogram_media_group-0.5.1-py3-none-any.whl", hash = "sha256:31fd150769075e23e6e161b444d553b8b62a33cd7d85ef770393572470a5ca38", size = 7536 },
+]
+
+[[package]]
 name = "aiohappyeyeballs"
 version = "2.4.4"
 source = { registry = "https://pypi.org/simple" }
@@ -116,6 +128,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89", size = 16081 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl", hash = "sha256:1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53", size = 13643 },
+]
+
+[[package]]
+name = "asyncio-pool"
+version = "0.6.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/99/11/65f0a225cb01ddd3782dcc0581085f10c9b3215bb911e6f66ff23053bc80/asyncio_pool-0.6.0.tar.gz", hash = "sha256:d7ba5e299ba58d4fb0cebbc722989d1f880df4c4b19e37055075b3dabc062c5b", size = 10206 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/13/b7/b22e41f2f3044da160a664ab74c337da876009ea8809318623ef10120904/asyncio_pool-0.6.0-py3-none-any.whl", hash = "sha256:bf4417be93c2776262d93decabbbd633579f7610947fb73d80857823689e1455", size = 8524 },
 ]
 
 [[package]]
@@ -247,11 +268,14 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "aiogram" },
+    { name = "aiogram-media-group" },
     { name = "alembic" },
+    { name = "asyncio-pool" },
     { name = "asyncpg" },
     { name = "greenlet" },
     { name = "python-dotenv" },
     { name = "sqlalchemy" },
+    { name = "tenacity" },
     { name = "xlsxwriter" },
 ]
 
@@ -263,11 +287,14 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "aiogram", specifier = ">=3.16.0" },
+    { name = "aiogram-media-group", specifier = ">=0.5.1" },
     { name = "alembic", specifier = ">=1.14.0" },
+    { name = "asyncio-pool", specifier = ">=0.6.0" },
     { name = "asyncpg", specifier = ">=0.30.0" },
     { name = "greenlet", specifier = ">=3.1.1" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "sqlalchemy", specifier = ">=2.0.36" },
+    { name = "tenacity", specifier = ">=9.0.0" },
     { name = "xlsxwriter", specifier = ">=3.2.0" },
 ]
 
@@ -527,6 +554,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a1/95/81babb6089938680dfe2cd3f88cd3fd39cccd1543b7cb603b21ad881bff1/SQLAlchemy-2.0.36-cp313-cp313-win32.whl", hash = "sha256:0572f4bd6f94752167adfd7c1bed84f4b240ee6203a95e05d1e208d488d0d436", size = 2060439 },
     { url = "https://files.pythonhosted.org/packages/c1/ce/5f7428df55660d6879d0522adc73a3364970b5ef33ec17fa125c5dbcac1d/SQLAlchemy-2.0.36-cp313-cp313-win_amd64.whl", hash = "sha256:8c78ac40bde930c60e0f78b3cd184c580f89456dd87fc08f9e3ee3ce8765ce88", size = 2084574 },
     { url = "https://files.pythonhosted.org/packages/b8/49/21633706dd6feb14cd3f7935fc00b60870ea057686035e1a99ae6d9d9d53/SQLAlchemy-2.0.36-py3-none-any.whl", hash = "sha256:fddbe92b4760c6f5d48162aef14824add991aeda8ddadb3c31d56eb15ca69f8e", size = 1883787 },
+]
+
+[[package]]
+name = "tenacity"
+version = "9.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cd/94/91fccdb4b8110642462e653d5dcb27e7b674742ad68efd146367da7bdb10/tenacity-9.0.0.tar.gz", hash = "sha256:807f37ca97d62aa361264d497b0e31e92b8027044942bfa756160d908320d73b", size = 47421 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b6/cb/b86984bed139586d01532a587464b5805f12e397594f19f931c4c2fbfa61/tenacity-9.0.0-py3-none-any.whl", hash = "sha256:93de0c98785b27fcf659856aa9f54bfbd399e29969b0621bc7f762bd441b4539", size = 28169 },
 ]
 
 [[package]]
